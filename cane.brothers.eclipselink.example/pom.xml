@@ -1,0 +1,86 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>cane.brothers</groupId>
+	<artifactId>cane.brothers.eclipselink.example</artifactId>
+
+	<version>1.0.0-SNAPSHOT</version>
+
+	<repositories>
+		<repository>
+			<id>oss.sonatype.org</id>
+			<name>OSS Sonatype Staging</name>
+			<url>https://oss.sonatype.org/content/groups/staging</url>
+		</repository>
+	</repositories>
+
+	<name>cane.brothers.eclipselink.example</name>
+	<description>simple jpa example</description>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+		<derby.version>10.12.1.1</derby.version>
+		<eclipselink.version>2.6.2</eclipselink.version>
+		<junit.version>4.11</junit.version>
+	</properties>
+
+	<dependencies>
+
+		<!-- jpa: eclipse link -->
+		<dependency>
+			<groupId>org.eclipse.persistence</groupId>
+			<artifactId>eclipselink</artifactId>
+			<version>${eclipselink.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.eclipse.persistence</groupId>
+					<artifactId>commonj.sdo</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- db: derby -->
+		<dependency>
+			<groupId>org.apache.derby</groupId>
+			<artifactId>derbyclient</artifactId>
+			<version>${derby.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.derby</groupId>
+			<artifactId>derby</artifactId>
+			<version>${derby.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- <dependency> <groupId>org.projectlombok</groupId> <artifactId>lombok</artifactId> 
+			<version>1.16.6.0</version> <scope>provided</scope> </dependency> -->
+
+		<!-- <dependency> <groupId>org.eclipse.xtend</groupId> <artifactId>org.eclipse.xtend.core</artifactId> 
+			<version>2.9.1</version> </dependency> -->
+
+
+
+
+	</dependencies>
+
+	<organization>
+		<name>Cane Brothers</name>
+	</organization>
+
+	<build>
+		<plugins>
+
+		</plugins>
+	</build>
+
+</project>
