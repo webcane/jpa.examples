@@ -5,27 +5,19 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import lombok.Builder;
-//import lombok.Data;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-//@Data
-@Builder
+@Data
 @Entity
 public class Todo {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+
+	private String summary;
+	private String description;
 	
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
-  
-  @Getter
-  @Setter
-  private String summary;
-  
-  @Getter
-  @Setter
-  private String description;
-
-} 
-
+}
