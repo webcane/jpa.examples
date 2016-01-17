@@ -5,6 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.eclipse.xtend.lib.annotations.Data;
+
+@Data
 @Entity
 public class Todo {
 	
@@ -12,30 +15,8 @@ public class Todo {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   
-  private String summary;
-  private String description;
-
-  public String getSummary() {
-    return summary;
-  }
-
-  public void setSummary(String summary) {
-    this.summary = summary;
-  }
-
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
-  @Override
-  public String toString() {
-    return "Todo [summary=" + summary + ", description=" + description
-        + "]";
-  }
+  String summary;
+  String description;
 
 } 
 

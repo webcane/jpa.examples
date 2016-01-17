@@ -25,6 +25,7 @@
 		<derby.version>10.12.1.1</derby.version>
 		<eclipselink.version>2.6.2</eclipselink.version>
 		<junit.version>4.11</junit.version>
+		<xtend.version>2.9.1</xtend.version>
 	</properties>
 
 	<dependencies>
@@ -71,6 +72,12 @@
 
 
 
+		<dependency>
+			<groupId>org.eclipse.xtend</groupId>
+			<artifactId>org.eclipse.xtend.core</artifactId>
+			<version>${xtend.version}</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<organization>
