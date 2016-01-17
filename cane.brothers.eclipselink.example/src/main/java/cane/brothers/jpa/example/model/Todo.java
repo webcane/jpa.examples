@@ -5,6 +5,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.Builder;
+//import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
+//@Data
+@Builder
 @Entity
 public class Todo {
 	
@@ -12,30 +19,13 @@ public class Todo {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   
+  @Getter
+  @Setter
   private String summary;
+  
+  @Getter
+  @Setter
   private String description;
-
-  public String getSummary() {
-    return summary;
-  }
-
-  public void setSummary(String summary) {
-    this.summary = summary;
-  }
-
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
-  @Override
-  public String toString() {
-    return "Todo [summary=" + summary + ", description=" + description
-        + "]";
-  }
 
 } 
 
