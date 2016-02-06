@@ -2,8 +2,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>cane.brothers</groupId>
-	<artifactId>cane.brothers.eclipselink.example</artifactId>
+	<groupId>cane.brothers.jpa</groupId>
+	<artifactId>cane.brothers.jpa.eclipselink</artifactId>
 
 	<version>1.0.0-SNAPSHOT</version>
 
@@ -15,8 +15,8 @@
 		</repository>
 	</repositories>
 
-	<name>cane.brothers.eclipselink.example</name>
-	<description>simple jpa example</description>
+	<name>cane.brothers.jpa</name>
+	<description>simple jpa eclipselink example</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
