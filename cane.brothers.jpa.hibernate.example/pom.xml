@@ -1,45 +1,30 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
-	<groupId>cane.brothers</groupId>
-	<artifactId>cane.brothers.eclipselink.example</artifactId>
-
+	<artifactId>cane.brothers.jpa.hibernate</artifactId>
+	<name>cane.brothers.jpa</name>
+	<description>simple jpa hibernate example</description>
+	<groupId>cane.brothers.jpa</groupId>
 	<version>1.0.0-SNAPSHOT</version>
-
-	<repositories>
-		<repository>
-			<id>oss.sonatype.org</id>
-			<name>OSS Sonatype Staging</name>
-			<url>https://oss.sonatype.org/content/groups/staging</url>
-		</repository>
-	</repositories>
-
-	<name>cane.brothers.eclipselink.example</name>
-	<description>simple jpa example</description>
-
+	<organization>
+		<name>Cane Brothers</name>
+	</organization>
+	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
 		<derby.version>10.12.1.1</derby.version>
-		<eclipselink.version>2.6.2</eclipselink.version>
 		<junit.version>4.11</junit.version>
+		<hibernate.version>5.0.7.Final</hibernate.version>
 	</properties>
-
+	
 	<dependencies>
-
-		<!-- jpa: eclipse link -->
+		<!-- JPA: Hibernate O/RM implementation of the JPA specification -->
 		<dependency>
-			<groupId>org.eclipse.persistence</groupId>
-			<artifactId>eclipselink</artifactId>
-			<version>${eclipselink.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.eclipse.persistence</groupId>
-					<artifactId>commonj.sdo</artifactId>
-				</exclusion>
-			</exclusions>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.version}</version>
 		</dependency>
 
 		<!-- db: derby -->
@@ -54,18 +39,15 @@
 			<artifactId>derby</artifactId>
 			<version>${derby.version}</version>
 		</dependency>
-
+		
+		<!-- JUnit -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
-	 
+		
 	</dependencies>
-
-	<organization>
-		<name>Cane Brothers</name>
-	</organization>
-
+	
 </project>

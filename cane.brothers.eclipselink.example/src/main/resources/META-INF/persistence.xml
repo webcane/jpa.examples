@@ -4,7 +4,9 @@
 	version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
 
 	<persistence-unit name="todos" transaction-type="RESOURCE_LOCAL">
-		<class>cane.brothers.jpa.example.model.Todo</class>
+		<description>JPA EclipseLink Test</description>
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<class>cane.brothers.jpa.model.Todo</class>
 
 		<properties>
 

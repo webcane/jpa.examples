@@ -1,4 +1,4 @@
-package cane.brothers.eclipselink.model;
+package cane.brothers.jpa.test;
 
 import static org.junit.Assert.assertEquals;
 
@@ -44,13 +44,16 @@ public class TestTodo {
 
 		// should be no todos in the table
 		assertEquals(0, q.getResultList().size());
+		System.out.println("Table Todo is empty. Ok");
 	}
 
 	@Ignore
 	@Test
 	public void test02_createTodos() {
 		for (int i = 1; i <= TODO_AMOUNT; i++) {
-			createTodo(em, "Test todo " + i, "Description");
+			if(createTodo(em, "Test todo " + i, "Description") != null) {
+				System.out.println("Todo created. Ok");
+			}
 		}
 	}
 
@@ -75,13 +78,15 @@ public class TestTodo {
 	}
 
 	// create new todo
-	private void createTodo(EntityManager em, String name, String descr) {
+	private Todo createTodo(EntityManager em, String name, String descr) {
 		em.getTransaction().begin();
 		Todo todo = new Todo();
 		todo.setSummary(name);
 		todo.setDescription(descr);
 		em.persist(todo);
 		em.getTransaction().commit();
+		return todo;
 	}
 
 }
+
