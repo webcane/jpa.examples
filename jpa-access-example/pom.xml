@@ -1,0 +1,95 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+	http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>cane.brothers.jpa</groupId>
+	<artifactId>jpa-access-example</artifactId>
+
+	<version>0.0.1-SNAPSHOT</version>
+	<name>jpa-access</name>
+	<description>spring jpa access type example</description>
+
+	<organization>
+		<name>Cane Brothers</name>
+	</organization>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+		
+		<spring.data.version>1.9.4.RELEASE</spring.data.version>
+		<jee.version>7.0</jee.version>
+		<eclipselink.version>2.6.2</eclipselink.version>
+		
+		<dbh2.version>1.4.191</dbh2.version>
+		<junit.version>4.11</junit.version>
+		<logback.version>1.1.4</logback.version>	
+	</properties>
+	
+	<dependencies>
+	
+		<!-- JPA: API -->
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>${jee.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<!-- jpa: eclipse link -->
+		<dependency>
+			<groupId>org.eclipse.persistence</groupId>
+			<artifactId>eclipselink</artifactId>
+			<version>${eclipselink.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.eclipse.persistence</groupId>
+					<artifactId>commonj.sdo</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		
+		
+		<!-- Container: Spring Data -->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+			<version>${spring.data.version}</version>
+			<exclusions>
+			  <exclusion>
+				<groupId>commons-logging</groupId>
+				<artifactId>commons-logging</artifactId>
+			  </exclusion>
+			</exclusions>
+		</dependency>
+		        
+		<!-- H2 DB -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>${dbh2.version}</version>
+        </dependency>
+        
+        
+        <!-- Logging: logback -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback.version}</version>
+		</dependency>        
+        
+        
+        <!-- Testing -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>		
+
+	</dependencies>
+		
+</project>
